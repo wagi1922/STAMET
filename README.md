@@ -63,8 +63,8 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 ## How to tray
 
 ### 1. install Laravel & Composer
-instal Laravel in Windows PowerShell Run as Run as administrator... n/
-copy this and paste in Windows PowerShell n/
+instal Laravel in Windows PowerShell Run as Run as administrator...    
+copy this and paste in Windows PowerShell    
 jalan kan kedua perintah ini di Windows PowerShell dan jalan kan dengan Run as administrator
 ```bash
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://php.new/install/windows/8.4'))
