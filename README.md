@@ -59,3 +59,42 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## How to tray
+
+### 1. install Laravel & Composer
+instal Laravel in Windows PowerShell Run as Run as administrator...
+copy this and paste in Windows PowerShell
+jalan kan kedua perintah ini di Windows PowerShell dan jalan kan dengan Run as administrator
+```bash
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://php.new/install/windows/8.4'))
+```
+```bash
+composer global require laravel/installer
+```
+
+### 2.  install the Laravel Package
+buka CommandPromt(CMD) and masuk ke direktori project dan jalan kan perintah ini
+```bash
+composer install
+```
+
+### 3. Install Package vue/js
+jalan kan perintah ini di CMD atau Terminal VS code 
+```bash
+npm install
+npm run build
+```
+
+### 4. migration
+jalan kan perintah ini di CMD atau Terminal VS code 
+```bash
+php artisan migrate
+```
+
+next type yes
+### 5. Run Laravel
+perintah ini dapat di jalankan di CMD atau Terminal VS code 
+```bash
+php artisan serve
+```
