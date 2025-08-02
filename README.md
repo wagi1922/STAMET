@@ -63,8 +63,8 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 ## How to tray
 
 ### 1. install Laravel & Composer
-instal Laravel in Windows PowerShell Run as Run as administrator...
-copy this and paste in Windows PowerShell
+instal Laravel in Windows PowerShell Run as Run as administrator... n/
+copy this and paste in Windows PowerShell n/
 jalan kan kedua perintah ini di Windows PowerShell dan jalan kan dengan Run as administrator
 ```bash
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://php.new/install/windows/8.4'))
@@ -74,7 +74,7 @@ composer global require laravel/installer
 ```
 
 ### 2.  install the Laravel Package
-buka CommandPromt(CMD) and masuk ke direktori project dan jalan kan perintah ini
+jalan kan perintah ini di CMD atau Terminal VS code 
 ```bash
 composer install
 ```
@@ -94,7 +94,7 @@ php artisan migrate
 
 next type yes
 ### 5. Run Laravel
-perintah ini dapat di jalankan di CMD atau Terminal VS code 
+jalan kan perintah ini di CMD atau Terminal VS code 
 ```bash
 php artisan serve
 ```
