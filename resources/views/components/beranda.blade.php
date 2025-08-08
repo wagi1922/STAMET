@@ -41,6 +41,7 @@
     // Pastikan nama variabelnya cocok dengan yang dikirim dari PageController.
     // Jika di PageController Anda mengirim ['cuaca_tiga_hari_beranda' => $data], maka gunakan $cuaca_tiga_hari_beranda
     const dataPrakiraanLengkap = @json($cuaca_tiga_hari_beranda ?? []);
+    var dataPrakiraanTigaHariGlobal = @json($cuaca_tiga_hari_beranda ?? []);
 
     document.addEventListener('DOMContentLoaded', function() {
         const tabButtons = document.querySelectorAll('.tabs-cuaca .tab-button');

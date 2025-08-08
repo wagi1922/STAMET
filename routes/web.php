@@ -7,4 +7,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/beranda', [PageController::class, 'index']);
+Route::get('/beranda', [PageController::class, 'index'])->name('home');
