@@ -32,7 +32,7 @@ class PengajuanMagang extends Model
      protected function pathDokumen(): Attribute
      {
         return Attribute::make(
-            get: fn ($path_dokumen) => url ('/storage/posts/' . $path_dokumen),
+            get: fn ($path_dokumen) => url ('/storage/Pengajuan_magang/' . $path_dokumen),
         );
      }
 }
