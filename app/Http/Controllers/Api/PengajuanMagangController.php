@@ -38,7 +38,7 @@ class PengajuanMagangController extends Controller
         }
 
         // PERUBAHAN DI SINI: Menyimpan file secara eksplisit ke disk 'public'
-        $path = $request->file('path_dokumen')->store('Pengajuan_magang', 'public');
+        $path = $request->file('path_dokumen')->store('PengajuanMagang', 'public');
 
         $pengajuan = PengajuanMagang::create([
             'nama_lengkap'      => $request->nama_lengkap,
@@ -80,10 +80,10 @@ class PengajuanMagangController extends Controller
         $documentPath = $pengajuanMagang->path_dokumen;
 
         if ($request->hasFile('path_dokumen')) {
-            Storage::disk('public')->delete('Pengajuan_magang/'.$pengajuanMagang->getRawOriginal('path_dokumen'));
+            Storage::disk('public')->delete('PengajuanMagang/'.$pengajuanMagang->getRawOriginal('path_dokumen'));
             
             // PERUBAHAN DI SINI: Menyimpan file baru secara eksplisit ke disk 'public'
-            $path = $request->file('path_dokumen')->store('Pengajuan_magang', 'public');
+            $path = $request->file('path_dokumen')->store('PengajuanMagang', 'public');
             $documentPath = basename($path);
         }
 
@@ -104,7 +104,7 @@ class PengajuanMagangController extends Controller
     public function destroy(PengajuanMagang $pengajuanMagang)
     {
         // Menghapus file dari disk 'public'
-        Storage::disk('public')->delete('Pengajuan_magang/'.$pengajuanMagang->getRawOriginal('path_dokumen'));
+        Storage::disk('public')->delete('PengajuanMagang/'.$pengajuanMagang->getRawOriginal('path_dokumen'));
         $pengajuanMagang->delete();
 
         return new PengajuanMagangResource(true, 'Data Pengajuan Magang Berhasil Dihapus!', null);
