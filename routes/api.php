@@ -9,17 +9,20 @@ use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\BeritaController;
 use App\Http\Controllers\Api\KlaimAnsuransiController; 
 use App\Http\Controllers\Api\PengajuanMagangController;
+use App\Http\Controllers\Api\PermintaanDataCuacaController;
 
 
 Route::middleware([ApiKeyMiddleware::class])->group(function () {
     Route::post('/register', [AuthController::class, 'register']);
     Route::post('/login', [AuthController::class, 'login']);
     
-    // Rute publik (tanpa login)
+    // Rute publik
     Route::post('/pengajuan-magang', [PengajuanMagangController::class, 'store']);
     Route::get('/berita', [BeritaController::class, 'index']);
     Route::get('/berita/{berita}', [BeritaController::class, 'show']);
     Route::post('/klaim-asuransi', [KlaimAnsuransiController::class, 'store']);
+    Route::post('/permintaan-data-cuaca', [PermintaanDataCuacaController::class, 'store']);
+
 });
 
 Route::middleware(['auth:sanctum', ApiKeyMiddleware::class])->group(function () {
@@ -46,4 +49,10 @@ Route::middleware(['auth:sanctum', ApiKeyMiddleware::class])->group(function () 
     Route::get('/klaim-asuransi/{klaimAsuransi}', [KlaimAnsuransiController::class, 'show']);
     Route::post('/klaim-asuransi/{klaimAsuransi}', [KlaimAnsuransiController::class, 'update']);
     Route::delete('/klaim-asuransi/{klaimAsuransi}', [KlaimAnsuransiController::class, 'destroy']);
+
+    // --- PERMINTAAN DATA CUACA ---
+    Route::get('/permintaan-data-cuaca', [PermintaanDataCuacaController::class, 'index']);
+    Route::get('/permintaan-data-cuaca/{permintaanDataCuaca}', [PermintaanDataCuacaController::class, 'show']);
+    Route::post('/permintaan-data-cuaca/{permintaanDataCuaca}', [PermintaanDataCuacaController::class, 'update']);
+    Route::delete('/permintaan-data-cuaca/{permintaanDataCuaca}', [PermintaanDataCuacaController::class, 'destroy']);
 });

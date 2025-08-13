@@ -33,8 +33,7 @@ class KlaimAnsuransiController extends Controller
             'nama_perusahaan'          => 'required|string|max:255',
             'nomor_whatsapp'           => 'required|string|max:20',
             'tanggal_surat_permohonan' => 'required|date',
-            'path_berkas_surat'        => 'required|file|mimes:pdf,doc,docx|max:2048',
-            'jumlah_kejadian_input'    => 'required|integer|min:1',
+            'path_berkas_surat'        => 'file|mimes:pdf,doc,docx|max:2048',
         ]);
 
         if ($validator->fails()) {

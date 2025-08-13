@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
-use App\Models\PengajuanMagang;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
+use App\Models\PengajuanMagang;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 use App\Http\Resources\PengajuanMagangResource;
 
 class PengajuanMagangController extends Controller
