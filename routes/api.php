@@ -51,6 +51,8 @@ Route::middleware(['auth:sanctum', ApiKeyMiddleware::class])->group(function () 
     Route::delete('/klaim-asuransi/{klaimAsuransi}', [KlaimAnsuransiController::class, 'destroy']);
 
     // --- PERMINTAAN DATA CUACA ---
+    Route::get('/permintaan-data-cuaca/export', [PermintaanDataCuacaController::class, 'export']);
+    Route::get('/permintaan-data-cuaca/{permintaanDataCuaca}/export', [PermintaanDataCuacaController::class, 'exportDetail']);
     Route::get('/permintaan-data-cuaca', [PermintaanDataCuacaController::class, 'index']);
     Route::get('/permintaan-data-cuaca/{permintaanDataCuaca}', [PermintaanDataCuacaController::class, 'show']);
     Route::post('/permintaan-data-cuaca/{permintaanDataCuaca}', [PermintaanDataCuacaController::class, 'update']);

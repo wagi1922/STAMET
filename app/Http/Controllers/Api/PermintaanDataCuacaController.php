@@ -4,9 +4,12 @@ namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use App\Models\PermintaanDataCuaca;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use App\Exports\PermintaanDataCuacaExport;
+use App\Exports\PermintaanDataCuacaDetailExport;
 use App\Http\Resources\PermintaanDataCuacaResource;
 
 class PermintaanDataCuacaController extends Controller
@@ -121,5 +124,22 @@ class PermintaanDataCuacaController extends Controller
         $permintaanDataCuaca->delete();
 
         return new PermintaanDataCuacaResource(true, 'Data Klaim Asuransi Berhasil Dihapus!', null); 
+    }
+    /**
+     * Export all Permintaan Data Cuaca to Excel.
+     */
+    public function export()
+    {
+        $filename = 'permintaan_data_cuaca_' . now()->format('Y_m_d_H_i_s') . '.xlsx';
+        return Excel::download(new PermintaanDataCuacaExport, $filename);
+    }
+
+    /**
+     * Export a specific Permintaan Data Cuaca to Excel.
+     */
+    public function exportDetail(PermintaanDataCuaca $permintaanDataCuaca)
+    {
+        $filename = 'permintaan_data_cuaca_detail_' . $permintaanDataCuaca->nama_pemohon . '_' . now()->format('Y_m_d_H_i_s') . '.xlsx';
+        return Excel::download(new PermintaanDataCuacaDetailExport($permintaanDataCuaca), $filename);
     }
 }
