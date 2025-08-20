@@ -98,3 +98,6 @@ jalan kan perintah ini di CMD atau Terminal VS code
 ```bash
 php artisan serve
 ```
+
+## Pstman Documentasion
+[API documentation](https://documenter.getpostman.com/view/40220961/2sB3BKG8qe).
